@@ -3,9 +3,9 @@ package com.example.knowu
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class InicioAppActivity : AppCompatActivity() {
+class CadastroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cadastro_dois)
+        setContentView(R.layout.activity_cadastro)
     }
 }
