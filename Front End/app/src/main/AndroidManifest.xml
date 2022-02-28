@@ -10,9 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Knowu">
         <activity
-            android:name=".InicioAppActivity"
-            android:label="Inicio"
+            android:name=".SignUpTwoActivity"
             android:exported="true" />
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".InicioAppActivity"
+            android:exported="true"
+            android:label="Inicio" />
         <activity
             android:name=".EmailActivity"
             android:exported="true">
