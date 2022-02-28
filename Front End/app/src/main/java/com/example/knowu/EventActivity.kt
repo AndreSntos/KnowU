@@ -14,13 +14,23 @@ class EventActivity : AppCompatActivity() {
         binding = ActivityEventBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val ivFundo: IntArray = intArrayOf(R.drawable.events_background, R.drawable.event_logo, R.drawable.events_background, R.drawable.event_logo)
-        val tvTitulo: Array<String> = arrayOf("Teste", "Teste 2", "Malla", "Sen")
+        val ivFundo: IntArray = intArrayOf(
+            R.drawable.music_background_events, R.drawable.shopping_background_events,
+            R.drawable.park_background_events, R.drawable.soccer_background_events
+        )
+        val tvTitulo: Array<String> = arrayOf("Música", "Shopping", "Parque", "Futebol")
+
+        val tvDescricao: Array<String> = arrayOf(
+            "Evento que ocorrerá no sábado  no teatro municipal ",
+            "Evento que ocorrerá no shopping Tatuapé",
+            "Um dia divertido no Ibirapuera para correr.",
+            "Um futebol que vai acontecer na bandtec"
+        )
 
         eventos = ArrayList()
 
         for (i in tvTitulo.indices) {
-            val evento: Evento = Evento(tvTitulo[i], ivFundo[i])
+            val evento: Evento = Evento(tvTitulo[i], ivFundo[i], tvDescricao[i])
             eventos.add(evento)
         }
 

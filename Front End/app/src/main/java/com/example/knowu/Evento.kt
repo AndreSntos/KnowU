@@ -1,4 +1,6 @@
 package com.example.knowu
 
-class Evento(var titulo: String, var imagem: Int) {
+import android.graphics.drawable.Drawable
+
+class Evento(var titulo: String, var imagem: Int, var descricao: String) {
 }
