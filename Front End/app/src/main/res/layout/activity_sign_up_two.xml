@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_background_tela_email"
-    tools:context=".CadastroDoisActivity">
+    tools:context=".SignUpTwoActivity">
 
     <LinearLayout
         android:layout_width="320dp"
@@ -88,6 +88,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:hint="CPF"
+                android:inputType="number"
                 android:textColor="@color/black"
                 android:textColorHint="@color/primary_blue"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -110,30 +111,46 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gênero"
+                android:textSize="18sp"
+                android:layout_marginLeft="16dp"/>
 
-
-            <RadioButton
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Masculino"
-                android:translationY="-30dp">
+                android:orientation="horizontal"
+                android:layout_marginBottom="30dp">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Masculino"
+                    android:id="@+id/rd_masculino">
 
-            </RadioButton>
+                </RadioButton>
 
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Feminino"
-                android:translationY="-30dp">
+                <RadioButton
+                    android:id="@+id/rd_feminino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Feminino"
+                    android:layout_marginLeft="10dp">
 
-            </RadioButton>
+                </RadioButton>
+            </LinearLayout>
+
+
+
         </com.google.android.material.textfield.TextInputLayout>
 
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="124px"
+            android:layout_height="164px"
             android:layout_marginTop="-20dp"
             android:backgroundTint="@color/primary_blue"
             android:paddingStart="74dp"

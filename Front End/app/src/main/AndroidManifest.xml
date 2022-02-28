@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Knowu">
         <activity
-            android:name=".CadastroDoisActivity"
+            android:name=".SignUpTwoActivity"
             android:exported="true" />
         <activity
-            android:name=".CadastroActivity"
+            android:name=".SignUpActivity"
             android:exported="true" />
         <activity
             android:name=".InicioAppActivity"
