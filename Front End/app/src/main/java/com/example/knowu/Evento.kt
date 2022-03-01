@@ -2,5 +2,5 @@ package com.example.knowu
 
 import android.graphics.drawable.Drawable
 
-class Evento(var titulo: String, var imagem: Int, var descricao: String) {
+data class Evento(var id: Int, var titulo: String, var imagem: Int, var descricao: String) {
 }
