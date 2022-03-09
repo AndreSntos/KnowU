@@ -36,9 +36,9 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     fun nextStep(v: View) {
-        var user = findViewById<EditText>(R.id.ti_usuario)
+        var user = findViewById<EditText>(R.id.ti_login)
         var email = findViewById<EditText>(R.id.ti_email)
-        var password = findViewById<EditText>(R.id.ti_usuario)
+        var password = findViewById<EditText>(R.id.ti_login)
         var passwordConfirm = findViewById<EditText>(R.id.ti_confirme_senha)
 
         if (validFields(user, email, password, passwordConfirm)) {
