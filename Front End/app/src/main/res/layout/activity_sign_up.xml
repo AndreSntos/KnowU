@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="320dp"
         android:layout_height="match_parent"
-        android:gravity="top|center"
+        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -20,19 +20,22 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_marginTop="20dp"
+            android:gravity="start"
+            android:orientation="vertical">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/arrow_back"
-                android:translationX="-140dp" />
+                android:background="@drawable/arrow_back" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -146,14 +149,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/primary_blue"
+            android:onClick="nextStep"
             android:paddingStart="64dp"
             android:paddingEnd="64dp"
             android:radius="5dp"
             android:text=">"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="34dp"
-            android:onClick="nextStep"/>
+            android:textSize="34dp" />
 
 
     </LinearLayout>
