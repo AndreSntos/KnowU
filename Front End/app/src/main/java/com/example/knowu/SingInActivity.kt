@@ -17,7 +17,7 @@ class SingInActivity : AppCompatActivity() {
         etLogin: EditText,
         etPassword: EditText): Boolean{
         var dialog = AlertDialog.Builder(this);
-        dialog.setTitle("Erro").setIcon(R.drawable.error).
+        dialog.setTitle("Erro").setIcon(R.drawable.error)
             .setPositiveButton("Ok", null)
 
         if (etLogin.text.toString().isEmpty()){

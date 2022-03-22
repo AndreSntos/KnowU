@@ -144,7 +144,6 @@
                 android:layout_marginTop="10dp"
                 android:background="@android:color/transparent"
                 android:hint="Usuário"
-                android:hintTextColor="#1976D2"
                 android:textColor="@color/black"
                 android:textColorHint="@color/primary_blue"
                 android:textSize="18sp" />

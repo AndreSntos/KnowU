@@ -14,4 +14,10 @@
         <!-- item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item -->
         <!-- Customize your theme here. -->
     </style>
+    <style name="Widget.Knowu.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Knowu.Chip.Choice</item>
+    </style>
+    <style name="ThemeOverlay.Knowu.Chip.Choice" parent="">
+        <item name="elevationOverlayEnabled">false</item>
+    </style>
 </resources>
