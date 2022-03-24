@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/KnowU/Front End/app/src/main/res/layout/activity_forgot_password.xml" value="0.15579710144927536" />
+        <entry key="..\:/KnowU/Front End/app/src/main/res/drawable/ic_launcher_background.xml" value="0.164" />
+        <entry key="..\:/KnowU/Front End/app/src/main/res/layout/activity_change_password.xml" value="0.22" />
+        <entry key="..\:/KnowU/Front End/app/src/main/res/layout/activity_email.xml" value="0.16530797101449277" />
+        <entry key="..\:/KnowU/Front End/app/src/main/res/layout/activity_forgot_password.xml" value="0.22" />
+        <entry key="..\:/KnowU/Front End/app/src/main/res/layout/activity_inicio_app.xml" value="0.13541666666666666" />
         <entry key="..\:/KnowU/Front End/app/src/main/res/layout/activity_senha_alterada_sucesso.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/fmall/Desktop/KnowU/Front End/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />
         <entry key="..\:/Users/fmall/Desktop/KnowU/Front End/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3828125" />

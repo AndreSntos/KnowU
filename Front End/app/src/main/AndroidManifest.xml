@@ -9,27 +9,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Knowu">
+<!--        <activity-->
+<!--            android:name=".ChangePassword"-->
+<!--            android:exported="true" />-->
         <activity
-            android:name=".ForgotPassword"
-            android:exported="false" />
+            android:name=".ForgotPasswordActivity"
+            android:exported="false"/>
         <activity
             android:name=".SignUpTwoActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".SignUpActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
-            android:name=".InicioAppActivity"
-            android:exported="true"
-            android:label="Inicio" />
+            android:name=".ChangePassword"
+            android:exported="true">
+<!--            android:label="Inicio">-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".EmailActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".SplashActivity"
