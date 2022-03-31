@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primary_blue">#2537C7</color>
+    <color name="fundo_criar_evento">#E9EAF4</color>
+    <color name="texto_criar_evento">#D4D3DB</color>
 </resources>
