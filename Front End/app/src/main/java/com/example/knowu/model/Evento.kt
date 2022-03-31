@@ -1,4 +1,4 @@
-package com.example.knowu
+package com.example.knowu.model
 
 import android.graphics.drawable.Drawable
 

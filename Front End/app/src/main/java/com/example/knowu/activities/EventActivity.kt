@@ -1,14 +1,12 @@
-package com.example.knowu
+package com.example.knowu.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.AdapterView
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.knowu.databinding.ActivityEventBinding
-import org.json.JSONArray
-import org.json.JSONObject
+import com.example.knowu.R
+import com.example.knowu.adapters.ListAdapterEvents
+import com.example.knowu.model.Evento
 
 
 class EventActivity: AppCompatActivity() {
@@ -42,7 +40,7 @@ class EventActivity: AppCompatActivity() {
         }
 
         val lvListaEvento: ListView = findViewById(R.id.lvListaEvento)
-        lvListaEvento.adapter = ListAdapter(this, eventos)
+        lvListaEvento.adapter = ListAdapterEvents(this, eventos)
 
         lvListaEvento.setOnItemClickListener { parent, _, position, _ ->
             val evento: Evento = parent.getItemAtPosition(position) as Evento
@@ -50,6 +48,9 @@ class EventActivity: AppCompatActivity() {
 
             val intent = Intent(this, EventClickedActivity::class.java)
             intent.putExtra("idEvento", evento.id)
+            intent.putExtra("titleEvent", evento.titulo)
+            intent.putExtra("describeEvent", evento.descricao)
+            intent.putExtra("imageEvent", evento.imagem)
             startActivity(intent)
         }
 

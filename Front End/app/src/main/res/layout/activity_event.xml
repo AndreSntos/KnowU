@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/event_background"
-    tools:context=".EventActivity">
+    tools:context=".activities.EventActivity">
 
     <LinearLayout
         android:layout_width="320dp"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -31,7 +31,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Eventos"
-                    android:textSize="40sp" />
+                    android:textSize="40sp"
+                    android:textColor="@color/black"/>
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -60,6 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="25dp"
+            android:layout_marginBottom="40dp"
             android:divider="@null"
             android:scrollbars="none"
             tools:listitem="@layout/list_item">
@@ -67,5 +69,20 @@
         </ListView>
 
     </LinearLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_navigation_menu"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="675dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/white"
+        app:itemIconTint="@color/icon_color_checked_menu"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

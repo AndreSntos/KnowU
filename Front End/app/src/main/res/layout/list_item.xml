@@ -57,7 +57,7 @@
                         android:layout_weight="3"
                         android:fontFamily="sans-serif-black"
                         android:text="teste"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/white"
                         android:textSize="42sp"
                         android:textStyle="bold" />
 
@@ -82,7 +82,7 @@
                     android:layout_marginTop="30dp"
                     android:fontFamily="sans-serif-medium"
                     android:text="teste"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="22sp"
                     android:textStyle="bold" />
 

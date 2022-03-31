@@ -1,4 +1,4 @@
-package com.example.knowu
+package com.example.knowu.adapters
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.knowu.model.Evento
+import com.example.knowu.R
 
-class ListAdapter(private val context: Activity, private val eventos: ArrayList<Evento>) :
+class ListAdapterEvents(private val context: Activity, private val eventos: ArrayList<Evento>) :
     ArrayAdapter<Evento>(context, R.layout.list_item, eventos) {
 
     @SuppressLint("ViewHolder")

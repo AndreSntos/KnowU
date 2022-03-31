@@ -1,7 +1,8 @@
-package com.example.knowu
+package com.example.knowu.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.knowu.R
 
 class SplashActivity : AppCompatActivity() {
 
