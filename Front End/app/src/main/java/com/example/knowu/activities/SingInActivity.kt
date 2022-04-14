@@ -1,5 +1,6 @@
 package com.example.knowu.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -49,5 +50,15 @@ class SingInActivity : AppCompatActivity() {
         } else {
 
         }
+    }
+
+    fun esqueceuASenha(v: View){
+        val telaEsqueceuSenha: Intent = Intent(baseContext, EmailActivity::class.java)
+        startActivity(telaEsqueceuSenha)
+    }
+
+    fun cadastrarUsuario(v: View){
+        val telaCadatro: Intent = Intent(baseContext, SignUpActivity::class.java)
+        startActivity(telaCadatro)
     }
 }
