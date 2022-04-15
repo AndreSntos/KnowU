@@ -41,7 +41,7 @@ class ChangePassword : AppCompatActivity() {
 
     fun trocaSenha(v: View){
         var senha = findViewById<EditText>(R.id.et_senha);
-        var confirmarSenha = findViewById<EditText>(R.id.et_confirmar_senha);
+        var confirmarSenha = findViewById<EditText>(R.id.et_confirmar);
         if (validarSenha(senha, confirmarSenha)){
             val proximaTela: Intent = Intent(baseContext, PasswordSucessActivity::class.java)
             startActivity(proximaTela)

@@ -14,7 +14,15 @@ class ForgotPasswordActivity : AppCompatActivity() {
         setContentView(R.layout.activity_forgot_password)
     }
 
-    fun verificaCodigo(etCodigo: EditText) : Boolean {
+    fun verificarCodigoEnviado(v: View){
+        var codigo = findViewById<EditText>(R.id.et_codigo);
+        if (validaCodigo(codigo)){
+            val proximaTela: Intent = Intent(baseContext, ChangePassword::class.java)
+            startActivity(proximaTela)
+        }
+    }
+
+    fun validaCodigo(etCodigo: EditText) : Boolean {
         var dialog = AlertDialog.Builder(this)
         dialog.setTitle("Atenção").setIcon(R.drawable.error)
             .setPositiveButton("Ok", null)
@@ -23,9 +31,6 @@ class ForgotPasswordActivity : AppCompatActivity() {
             etCodigo.error = "Digite o codigo!"
             dialog.setMessage("Digite o codigo!").show()
             return false;
-        } else {
-            val proximaTela: Intent = Intent(baseContext, ChangePassword::class.java)
-            startActivity(proximaTela)
         }
         return true;
     }
