@@ -17,7 +17,7 @@ class ToastActivity : AppCompatActivity() {
     }
 
     fun showToast(){
-        val view: View = layoutInflater.inflate(R.layout.activity_toast_error, null)
+        val view: View = layoutInflater.inflate(R.layout.activity_toast_copiado, null)
         val mToast = Toast(applicationContext)
         mToast.view = view
         mToast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)

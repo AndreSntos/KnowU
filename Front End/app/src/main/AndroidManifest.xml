@@ -43,11 +43,22 @@
             android:name=".activities.SignUpActivity"
             android:exported="true" />
         <activity
+            android:name=".activities.ForgotPasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.ChangePassword"
+            android:exported="true" />
+        <activity
             android:name=".activities.InicioAppActivity"
             android:exported="true"
             android:label="Inicio" />
         <activity
             android:name=".activities.EmailActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".activities.ToastActivity"
             android:exported="true">
 
         </activity>
