@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">knowu</string>
+
+    <string name="botao_home">Ver mais</string>
 </resources>
