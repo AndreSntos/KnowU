@@ -13,6 +13,18 @@
             android:name=".activities.EventClickedActivity"
             android:exported="true"
             android:theme="@style/Theme.Design.NoActionBar" />
+
+        <activity android:name=".OnboardActivity"
+            android:exported="true"/>
+
+        <activity android:name=".OnboardActivityTwo"
+            android:exported="true"/>
+
+        <activity android:name=".OnboardActivityThree"
+            android:exported="true"/>
+
+        <activity android:name=".activities.HomeEvent"
+            android:exported="true"/>
         <activity
             android:name=".activities.EventActivity"
             android:theme="@style/Theme.Design.NoActionBar" />
@@ -51,6 +63,7 @@
             android:exported="true">
 
         </activity>
+
         <activity
             android:name=".activities.PasswordSucessActivity"
             android:exported="true"
