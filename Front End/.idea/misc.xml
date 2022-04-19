@@ -36,16 +36,22 @@
         <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/drawable/rectangle_posts_form.xml" value="0.26205128205128203" />
         <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/drawable/rectangle_white_events_form.xml" value="0.14322916666666666" />
         <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/drawable/settings_events.xml" value="0.21574074074074073" />
+        <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/layout/activity_criar_evento.xml" value="0.264" />
         <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/layout/activity_event.xml" value="0.2" />
         <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/layout/activity_event_clicked.xml" value="0.2" />
+        <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/layout/activity_login.xml" value="0.18703703703703703" />
         <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/layout/activity_maps.xml" value="0.25" />
+        <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/layout/activity_profile.xml" value="0.264" />
         <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/layout/activity_splash.xml" value="0.25" />
-        <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/layout/activity_teste.xml" value="0.176" />
+        <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/layout/activity_teste.xml" value="0.25" />
+        <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/layout/bottom_sheet_profile.xml" value="0.18453865336658354" />
         <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/layout/list_item.xml" value="0.264" />
         <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/layout/list_item_posts.xml" value="0.2" />
+        <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/layout/list_posts_profile.xml" value="0.2444933920704846" />
+        <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/layout/rows_add_item.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/layout/selector.xml" value="0.25" />
         <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.264" />
-        <entry key="..\:/Users/guilh/Desktop/Faculdade/Semestre 4/KnowU/Front End/app/src/main/res/layout/activity_teste.xml" value="0.25" />
         <entry key="..\:/Users/sntos/OneDrive/Documentos/workspace/faculdade/quarto-semestre/KnowU/Front End/app/src/main/res/layout/activity_cadastro.xml" value="0.25" />
         <entry key="..\:/Users/sntos/OneDrive/Documentos/workspace/faculdade/quarto-semestre/KnowU/Front End/app/src/main/res/layout/activity_cadastro_dois.xml" value="0.25" />
         <entry key="..\:/Users/sntos/OneDrive/Documentos/workspace/faculdade/quarto-semestre/KnowU/Front End/app/src/main/res/layout/activity_email.xml" value="0.2" />

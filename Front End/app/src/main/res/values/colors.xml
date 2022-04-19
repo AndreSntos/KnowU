@@ -10,4 +10,5 @@
     <color name="primary_blue">#2537C7</color>
     <color name="fundo_criar_evento">#E9EAF4</color>
     <color name="texto_criar_evento">#D4D3DB</color>
+    <color name="scrollbar">#DC2138CB</color>
 </resources>

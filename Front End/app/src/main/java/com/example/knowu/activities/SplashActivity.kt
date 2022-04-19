@@ -5,6 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.example.knowu.R
+import com.example.knowu.model.Usuario
+import com.example.knowu.rest.Rest
+import com.example.knowu.services.UsuarioService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SplashActivity : AppCompatActivity() {
 
