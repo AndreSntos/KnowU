@@ -120,7 +120,7 @@
                 android:layout_marginTop="20dp"
                 android:text="Entre com a sua conta!"
                 android:textColor="@color/black"
-                android:textSize="30sp" />
+                android:textSize="28sp" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -144,7 +144,6 @@
                 android:layout_marginTop="10dp"
                 android:background="@android:color/transparent"
                 android:hint="Usuário"
-                android:hintTextColor="#1976D2"
                 android:textColor="@color/black"
                 android:textColorHint="@color/primary_blue"
                 android:textSize="18sp" />
@@ -177,6 +176,7 @@
             android:layout_marginTop="12dp"
             android:clickable="true"
             android:text="Esqueceu sua senha?"
+            android:onClick="esqueceuASenha"
             android:textColor="@color/primary_blue"
             android:textSize="16sp" />
 
@@ -186,11 +186,11 @@
             android:layout_height="60dp"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/primary_blue"
-            android:onClick="nextStep"
             android:paddingStart="64dp"
             android:paddingEnd="64dp"
             android:radius="5dp"
             android:text="Login"
+            android:onClick="loginSucess"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="24sp"
@@ -202,6 +202,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Cadastre-se"
+            android:onClick="cadastrarUsuario"
             android:textColor="@color/primary_blue"
             android:textSize="16sp" />
 

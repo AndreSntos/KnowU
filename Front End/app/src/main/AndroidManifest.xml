@@ -8,47 +8,76 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Knowu">
+        android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar">
         <activity
-            android:name=".SignUpTwoActivity"
+            android:name=".activities.EventClickedActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Design.NoActionBar" />
+
+        <activity android:name=".OnboardActivity"
+            android:exported="true"/>
+
+        <activity android:name=".OnboardActivityTwo"
+            android:exported="true"/>
+
+        <activity android:name=".OnboardActivityThree"
+            android:exported="true"/>
+
+        <activity android:name=".activities.HomeEvent"
+            android:exported="true"/>
+        <activity
+            android:name=".activities.EventActivity"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".activities.SucessoActivity"
             android:exported="true" />
         <activity
-            android:name=".SignUpActivity"
+            android:name=".activities.CriarEventoActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".activities.SplashActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".activities.SignUpTwoActivity"
             android:exported="true" />
         <activity
-            android:name=".InicioAppActivity"
+            android:name=".activities.SingInActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.SignUpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.ForgotPasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.ChangePassword"
+            android:exported="true" />
+        <activity
+            android:name=".activities.InicioAppActivity"
             android:exported="true"
             android:label="Inicio" />
         <activity
-            android:name=".EmailActivity"
+            android:name=".activities.EmailActivity"
             android:exported="true">
 
-             <intent-filter>
-             <action android:name="android.intent.action.MAIN" />
+        </activity>
 
+        <activity
+            android:name=".activities.ToastActivity"
+            android:exported="true">
 
-             <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
         </activity>
         <activity
-            android:name=".SplashActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Design.NoActionBar">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
-        <activity
-            android:name=".PasswordSucessActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Design.NoActionBar">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            android:name=".activities.PasswordSucessActivity"
+            android:exported="true">
         </activity>
     </application>
 

@@ -1,11 +1,12 @@
-package com.example.knowu
+package com.example.knowu.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
-import com.google.android.material.textfield.TextInputEditText
+import com.example.knowu.R
 
 class SingInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,7 +18,7 @@ class SingInActivity : AppCompatActivity() {
         etLogin: EditText,
         etPassword: EditText): Boolean{
         var dialog = AlertDialog.Builder(this);
-        dialog.setTitle("Erro").setIcon(R.drawable.error).
+        dialog.setTitle("Erro").setIcon(R.drawable.error)
             .setPositiveButton("Ok", null)
 
         if (etLogin.text.toString().isEmpty()){
@@ -49,5 +50,15 @@ class SingInActivity : AppCompatActivity() {
         } else {
 
         }
+    }
+
+    fun esqueceuASenha(v: View){
+        val telaEsqueceuSenha: Intent = Intent(baseContext, EmailActivity::class.java)
+        startActivity(telaEsqueceuSenha)
+    }
+
+    fun cadastrarUsuario(v: View){
+        val telaCadatro: Intent = Intent(baseContext, SignUpActivity::class.java)
+        startActivity(telaCadatro)
     }
 }

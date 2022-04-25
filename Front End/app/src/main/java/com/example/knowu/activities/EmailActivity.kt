@@ -1,11 +1,12 @@
-package com.example.knowu
+package com.example.knowu.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
-import androidx.core.graphics.toColor
+import com.example.knowu.R
 
 class EmailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +30,9 @@ class EmailActivity : AppCompatActivity() {
             dialog.setMessage("Digite um e-mail válido!").show()
             return false;
         }
-        return true;
+        val proximaTela: Intent = Intent(baseContext, ForgotPasswordActivity::class.java)
+        startActivity(proximaTela)
+        return true
     }
 
 }
