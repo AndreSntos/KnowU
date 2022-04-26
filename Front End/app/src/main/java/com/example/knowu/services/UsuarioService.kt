@@ -1,7 +1,8 @@
 package com.example.knowu.services
 
 import com.example.knowu.model.Usuario
-import com.example.knowu.request.UsuarioRequest
+import com.example.knowu.request.UsuarioAdicionarRequest
+import com.example.knowu.request.UsuarioLoginRequest
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -14,5 +15,8 @@ interface UsuarioService {
     fun list(): Call<List<Usuario>>
 
     @POST("/usuarios/login")
-    fun login(@Body usuarioRequest: UsuarioRequest): Call<List<Usuario>>
+    fun login(@Body usuarioLoginRequest: UsuarioLoginRequest): Call<Int>
+
+    @POST("/usuarios/adicionar")
+    fun adicionar(@Body usuarioAdicionarRequest: UsuarioAdicionarRequest): Call<Void>
 }

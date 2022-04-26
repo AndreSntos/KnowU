@@ -82,15 +82,17 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.vicmikhailau.maskededittext.MaskedEditText
                 android:id="@+id/ti_cpf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:hint="CPF"
+                app:mask="###.###.###-##"
+                android:maxLength="14"
                 android:inputType="number"
                 android:textColor="@color/black"
-                android:textColorHint="@color/primary_blue"/>
+                android:textColorHint="@color/primary_blue" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -98,15 +100,17 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.vicmikhailau.maskededittext.MaskedEditText
                 android:id="@+id/ti_nascimento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:backgroundTint="@color/black"
                 android:hint="Nascimento"
+                app:mask="##/##/####"
                 android:textColor="@color/black"
-                android:textColorHint="@color/primary_blue"/>
+                android:textColorHint="@color/primary_blue"
+                android:inputType="date"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -129,7 +133,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Masculino"
-                    android:id="@+id/rd_masculino">
+                    android:id="@+id/rd_masculino"
+                    android:onClick="generoSelecionado">
 
                 </RadioButton>
 
@@ -138,7 +143,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Feminino"
-                    android:layout_marginLeft="10dp">
+                    android:layout_marginLeft="10dp"
+                    android:onClick="generoSelecionado">
 
                 </RadioButton>
             </LinearLayout>
@@ -160,6 +166,7 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="38px"
+            android:onClick="nextStep"
             />
 
 

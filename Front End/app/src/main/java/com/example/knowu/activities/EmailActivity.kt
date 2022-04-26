@@ -1,5 +1,6 @@
 package com.example.knowu.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -29,7 +30,9 @@ class EmailActivity : AppCompatActivity() {
             dialog.setMessage("Digite um e-mail válido!").show()
             return false;
         }
-        return true;
+        val proximaTela: Intent = Intent(baseContext, ForgotPasswordActivity::class.java)
+        startActivity(proximaTela)
+        return true
     }
 
 }
