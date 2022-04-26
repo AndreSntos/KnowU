@@ -3,6 +3,7 @@ package com.example.knowu.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.LinearLayout
 import android.widget.ListView
 import com.example.knowu.R
@@ -73,11 +74,16 @@ class InterestsActivity : AppCompatActivity() {
 //            intent.putExtra("describeEvent", interesse.contagemUsuarios)
 //            intent.putExtra("imageEvent", interesse.imagemUsuarios)
 //            intent.putExtra("imageEvent", interesse.imagem)
-//            startActivity(intent)
+            startActivity(intent)
         }
 
 
     }
+
+    fun otherColor(v: View){
+
+    }
+
 
 
 }
