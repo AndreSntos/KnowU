@@ -23,21 +23,16 @@ class BottomSheet : BottomSheetDialogFragment() {
         val dialog: Dialog = super.onCreateDialog(savedInstanceState)
         //Must add any view here, actual view will be inflated in onCreateView
 
-        dialog.setContentView(R.layout.bottom_sheet_profile)
+        dialog.setContentView(R.layout.activity_criar_evento)
         //Dialog wraps view in frame layout
         val root: View = dialog.findViewById(R.id.design_bottom_sheet)
         //Now we have access to BottomSheetBehavior
         val behavior = BottomSheetBehavior.from(root)
 
-        dialog.findViewById<TextView>(R.id.tvUsuario).text = "GUIIIIII"
         //Do whatever you need:
         behavior.setPeekHeight(500, true);
         behavior.setState(BottomSheetBehavior.STATE_EXPANDED);
         return dialog
     }
 
-
-    fun teste() {
-
-    }
 }

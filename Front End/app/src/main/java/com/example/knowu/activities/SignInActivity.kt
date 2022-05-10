@@ -15,7 +15,8 @@ import retrofit2.Response
 
 class SignInActivity : AppCompatActivity() {
 
-    private val retrofit = Rest.getInstance()
+    val baseUrl = "http://34.228.172.224:8080/"
+    private val retrofit = Rest.getInstance(baseUrl)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -60,7 +61,7 @@ class SignInActivity : AppCompatActivity() {
 
                     println("respoe" + response.code())
                     if (response.code() == 200) {
-                        startActivity(Intent(baseContext, MapsActivity::class.java))
+                        startActivity(Intent(baseContext, HomeEvent::class.java))
                     }
 
                 }

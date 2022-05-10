@@ -1,8 +1,11 @@
 package com.example.knowu.activities
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.ListView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.knowu.R
 import com.example.knowu.adapters.ListAdapterEvents
@@ -16,7 +19,6 @@ class EventActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event)
-
         val tvIdEvento: IntArray = intArrayOf(1, 2, 3, 4)
 
         val ivFundo: IntArray = intArrayOf(
@@ -55,6 +57,33 @@ class EventActivity: AppCompatActivity() {
         }
 
 
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            R.id.page_1 -> {
+                item.isChecked = true
+                startActivity(Intent(baseContext, HomeEvent::class.java))
+                true
+            }
+            R.id.page_2 -> {
+                item.isChecked = true
+                true
+            }
+            R.id.page_3 -> {
+                item.isChecked = true
+                startActivity(Intent(baseContext, EventActivity::class.java))
+                true
+            }
+            R.id.page_4 -> {
+                item.isChecked = true
+                startActivity(Intent(baseContext, ProfileActivity::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
 

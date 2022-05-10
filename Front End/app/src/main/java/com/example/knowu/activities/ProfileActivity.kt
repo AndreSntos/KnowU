@@ -1,14 +1,21 @@
 package com.example.knowu.activities
 
+import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.ListView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.children
+import androidx.core.view.forEach
+import androidx.core.view.get
 import com.example.knowu.R
 import com.example.knowu.adapters.ListAdapterPosts
 import com.example.knowu.model.Postagem
+
 
 class ProfileActivity : AppCompatActivity() {
     private lateinit var postagens: ArrayList<Postagem>
@@ -22,8 +29,8 @@ class ProfileActivity : AppCompatActivity() {
     fun buscarPostagens() {
 
         val ivImagemUsuario: IntArray = intArrayOf(
-            R.drawable.event_logo, R.drawable.event_logo,
-            R.drawable.event_logo, R.drawable.event_logo
+            R.drawable.user_profile, R.drawable.user_profile,
+            R.drawable.user_profile, R.drawable.user_profile
         )
         val tvNomeUsuario: Array<String> =
             arrayOf("Anderson Leiva", "Patricia Silva", "Kevin Natali", "Vivian Lelis")
@@ -55,4 +62,35 @@ class ProfileActivity : AppCompatActivity() {
         lvListaPostagem.adapter = ListAdapterPosts(this, postagens)
 
     }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            R.id.page_1 -> {
+                item.isChecked = true
+                startActivity(Intent(baseContext, HomeEvent::class.java))
+                true
+            }
+            R.id.page_2 -> {
+                item.isChecked = true
+                true
+            }
+            R.id.page_3 -> {
+                item.isChecked = true
+                startActivity(Intent(baseContext, EventActivity::class.java))
+                true
+            }
+            R.id.page_4 -> {
+                item.isChecked = true
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    fun goToFaq(view: View) {
+        startActivity(Intent(baseContext, FaqActivity::class.java))
+    }
+
 }

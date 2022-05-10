@@ -13,7 +13,7 @@ class PasswordSucessActivity : AppCompatActivity() {
     }
 
     fun voltarLogin(v: View){
-        val proximaTela = Intent(baseContext, SingInActivity::class.java)
+        val proximaTela = Intent(baseContext, SignInActivity::class.java)
         startActivity(proximaTela)
     }
 }

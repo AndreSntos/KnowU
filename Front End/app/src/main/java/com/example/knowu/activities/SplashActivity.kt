@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.knowu.OnboardActivity
 import com.example.knowu.R
 import com.example.knowu.model.Usuario
 import com.example.knowu.rest.Rest
@@ -21,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         Handler().postDelayed({
-          val intent = Intent(this@SplashActivity, InicioAppActivity::class.java)
+          val intent = Intent(this@SplashActivity, OnboardActivity::class.java)
           startActivity(intent)
             finish()
         }, 3000)

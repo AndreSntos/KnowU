@@ -2,7 +2,6 @@
 
     <item
         android:id="@+id/page_1"
-        android:enabled="true"
         android:icon="@drawable/home_icon_menu"
         android:onClick="onOptionsItemSelected"
         android:title="Home"
@@ -10,20 +9,17 @@
         />
     <item
         android:id="@+id/page_2"
-        android:enabled="true"
         android:icon="@drawable/message_icon_menu"
         android:onClick="onOptionsItemSelected"
         android:title="Chat"
         />
     <item
         android:id="@+id/page_3"
-        android:enabled="true"
         android:icon="@drawable/calendar_icon_menu"
         android:onClick="onOptionsItemSelected"
         android:title="Eventos" />
     <item
         android:id="@+id/page_4"
-        android:enabled="true"
         android:icon="@drawable/person_icon_menu"
         android:onClick="onOptionsItemSelected"
         android:title="Perfil" />

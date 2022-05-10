@@ -55,4 +55,9 @@ class SignUpActivity : AppCompatActivity() {
         }
 
     }
+
+    fun voltarLogin(v: View){
+        val proximaTela = Intent(baseContext, SignInActivity::class.java)
+        startActivity(proximaTela)
+    }
 }

@@ -17,8 +17,9 @@ import retrofit2.Response
 
 class SignUpTwoActivity : AppCompatActivity() {
 
+    val baseUrl = "http://34.228.172.224:8080/"
     private lateinit var usuario: UsuarioAdicionarRequest;
-    private val retrofit = Rest.getInstance()
+    private val retrofit = Rest.getInstance(baseUrl)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up_two)

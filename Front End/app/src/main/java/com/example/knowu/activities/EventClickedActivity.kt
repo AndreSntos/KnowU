@@ -87,7 +87,7 @@ class EventClickedActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.page_1 -> {
                 item.isChecked = true
-
+                startActivity(Intent(baseContext, HomeEvent::class.java))
                 true
             }
             R.id.page_2 -> {
@@ -96,10 +96,12 @@ class EventClickedActivity : AppCompatActivity() {
             }
             R.id.page_3 -> {
                 item.isChecked = true
+                startActivity(Intent(baseContext, EventActivity::class.java))
                 true
             }
             R.id.page_4 -> {
                 item.isChecked = true
+                startActivity(Intent(baseContext, ProfileActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)

@@ -5,9 +5,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object Rest {
 
-    val baseUrl = "http://34.228.172.224:8080/"
-    fun getInstance(): Retrofit {
-        return Retrofit.Builder().baseUrl(baseUrl)
+
+    fun getInstance(url: String): Retrofit {
+        return Retrofit.Builder().baseUrl(url)
             .addConverterFactory(GsonConverterFactory.create()).build()
     }
 }
