@@ -1,30 +1,28 @@
 package com.example.knowu
 
-import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.tabs.TabLayout
-import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
-import android.view.Menu
-import android.view.MenuItem
-import com.example.knowu.ui.main.SectionsPagerAdapter
-import com.example.knowu.databinding.ActivityPerfilContaBinding
+import android.os.Bundle
+import androidx.viewpager2.widget.ViewPager2
+import com.example.knowu.adapters.PerfilContaAdapter
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
 class PerfilContaActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityPerfilContaBinding
+    var tabTitle = arrayOf("Perfil", "Conta")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_perfil_conta)
 
-        binding = ActivityPerfilContaBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        var pager = findViewById<ViewPager2>(R.id.viewPager2)
+        var tl = findViewById<TabLayout>(R.id.tabLayout)
+        pager.adapter = PerfilContaAdapter(supportFragmentManager, lifecycle)
 
-        val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
-        val viewPager: ViewPager = binding.viewPager
-        viewPager.adapter = sectionsPagerAdapter
-        val tabs: TabLayout = binding.tabs
-        tabs.setupWithViewPager(viewPager)
+
+        TabLayoutMediator(tl, pager) {
+            tab, position ->
+                tab.text = tabTitle[position]
+        }.attach()
     }
 }

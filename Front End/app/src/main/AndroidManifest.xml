@@ -17,15 +17,16 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".PerfilContaActivity"
-            android:exported="true"
-            android:label="@string/title_activity_perfil_conta"
-            android:theme="@style/NoActionBar">
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".activities.BottomMenuActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"/>
         <activity
             android:name=".activities.MenuActivity"
             android:exported="false" />
@@ -42,12 +43,8 @@
             android:exported="true" />
         <activity
             android:name=".activities.ProfileActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activities.EventClickedActivity"
