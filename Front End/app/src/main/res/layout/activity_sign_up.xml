@@ -30,7 +30,6 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/arrow_back"
                 android:onClick="voltarLogin"/>
-
         </LinearLayout>
 
         <LinearLayout
@@ -52,7 +51,6 @@
                 android:background="@drawable/pessoas_cadastro" />
         </LinearLayout>
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,7 +69,6 @@
             android:text="Crie, converse e se divirta descobrindo os melhores lugares!"
             android:textColor="@color/black"
             android:textSize="20dp" />
-
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -145,7 +142,6 @@
                 android:textSize="18dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -159,8 +155,5 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="34dp" />
-
-
     </LinearLayout>
-
 </ScrollView>

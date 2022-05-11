@@ -41,7 +41,6 @@
                 android:background="@drawable/pessoas_cadastro" />
         </LinearLayout>
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -60,7 +59,6 @@
             android:text="Crie, converse e se divirta descobrindo os melhores lugares!"
             android:textColor="@color/black"
             android:textSize="20dp" />
-
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -135,7 +133,6 @@
                     android:text="Masculino"
                     android:id="@+id/rd_masculino"
                     android:onClick="generoSelecionado">
-
                 </RadioButton>
 
                 <RadioButton
@@ -145,14 +142,9 @@
                     android:text="Feminino"
                     android:layout_marginLeft="10dp"
                     android:onClick="generoSelecionado">
-
                 </RadioButton>
             </LinearLayout>
-
-
-
         </com.google.android.material.textfield.TextInputLayout>
-
 
         <Button
             android:layout_width="wrap_content"
@@ -166,11 +158,6 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="38px"
-            android:onClick="nextStep"
-            />
-
-
+            android:onClick="nextStep" />
     </LinearLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

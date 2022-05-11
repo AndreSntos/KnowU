@@ -12,4 +12,7 @@
     <color name="texto_criar_evento">#D4D3DB</color>
     <color name="scrollbar">#DC2138CB</color>
     <color name="trasnpartente">#00D4D3DB</color>
+    <color name="icon_color_checked_menu">#2138CB</color>
+    <color name="erro">#E84438</color>
+    <color name="salvo">#4CAF50</color>
 </resources>

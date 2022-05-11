@@ -17,12 +17,9 @@
         android:gravity="center"
         android:paddingTop="20dp">
 
-
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="180dp">
-
-
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -34,7 +31,6 @@
                 android:orientation="vertical"
                 android:id="@+id/ivBackground"
                 android:clickable="true">
-
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -69,10 +65,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:src="@drawable/persons_interests"
-                            />
+                            android:src="@drawable/persons_interests" />
                     </LinearLayout>
-
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -80,15 +74,8 @@
                         android:layout_marginLeft="20dp"
                         android:src="@drawable/art"
                         android:id="@+id/ivFundo"/>
-
                 </LinearLayout>
-
-
             </LinearLayout>
-
-
         </FrameLayout>
-
     </LinearLayout>
-
 </FrameLayout>

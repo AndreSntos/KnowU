@@ -132,7 +132,6 @@
                 android:gravity="center"
                 android:text="Entre com a sua conta e descubra um novo mundo!"
                 android:textSize="20sp" />
-
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -167,9 +166,7 @@
                     android:textColorHint="@color/primary_blue"
                     android:textSize="18dp" />
             </com.google.android.material.textfield.TextInputLayout>
-
         </com.google.android.material.textfield.TextInputLayout>
-
 
         <TextView
             android:id="@+id/textView3"
@@ -207,8 +204,5 @@
             android:onClick="cadastrarUsuario"
             android:textColor="@color/primary_blue"
             android:textSize="16sp" />
-
-
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

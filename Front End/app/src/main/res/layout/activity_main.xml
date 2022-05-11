@@ -12,5 +12,4 @@
         android:id="@+id/btnOpenBottomSheet"
         android:text="Show Bottom Sheet"
         android:onClick="abrirBottomSheet"/>
-
 </LinearLayout>

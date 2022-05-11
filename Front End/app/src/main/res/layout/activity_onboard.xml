@@ -48,15 +48,13 @@
                 <ImageView
                     android:layout_width="465dp"
                     android:layout_height="313dp"
-                    android:background="@drawable/fundo1"
-                    />
+                    android:background="@drawable/fundo1" />
 
                 <ImageView
                     android:layout_width="308dp"
                     android:layout_height="292dp"
                     android:background="@drawable/item1"
                     android:layout_gravity="center"/>
-
             </FrameLayout>
         </LinearLayout>
 
@@ -105,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:textAlignment="textStart"
+                android:textAlignment="center"
                 android:text="Encontre os melhores locais e marque eventos com seus amigos e futuros colegas!"
                 android:textColor="@color/black"
                 android:textSize="20dp" />
@@ -140,7 +138,6 @@
             android:background="@drawable/retangulo2"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"/>
-
     </LinearLayout>
 
     <LinearLayout
@@ -175,11 +172,6 @@
             android:textColor="@color/white"
             android:textSize="34dp"
             android:onClick="nextPag"/>
-
     </LinearLayout>
-
-
-
     </LinearLayout>
-
 </ScrollView>

@@ -52,7 +52,6 @@
                 android:text="Agora entre na sua conta e se divirta perto da sua casa!"
                 android:textColor="@color/black"
                 android:textSize="24sp" />
-
         </LinearLayout>
 
         <Button
@@ -65,7 +64,5 @@
             app:cornerRadius="10dp"
             android:onClick="voltarLogin"
             android:backgroundTint="@color/primary_blue"/>
-
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

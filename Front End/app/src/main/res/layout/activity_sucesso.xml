@@ -35,7 +35,5 @@
             android:layout_height="wrap_content"
             android:text="Ir para evento"
             android:textAllCaps="false"/>
-
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

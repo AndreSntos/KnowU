@@ -48,15 +48,13 @@
                 <ImageView
                     android:layout_width="465dp"
                     android:layout_height="313dp"
-                    android:background="@drawable/fundo2"
-                    />
+                    android:background="@drawable/fundo2" />
 
                 <ImageView
                     android:layout_width="308dp"
                     android:layout_height="292dp"
                     android:background="@drawable/item2"
                     android:layout_gravity="center"/>
-
             </FrameLayout>
         </LinearLayout>
 
@@ -86,7 +84,6 @@
                     android:translationX="140dp"
                     android:layout_marginTop="51dp"/>
             </FrameLayout>
-
         </LinearLayout>
 
         <LinearLayout
@@ -140,7 +137,6 @@
                 android:background="@drawable/retangulo2"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"/>
-
         </LinearLayout>
 
         <LinearLayout
@@ -175,11 +171,6 @@
                 android:textColor="@color/white"
                 android:textSize="34dp"
                 android:onClick="nextPag"/>
-
         </LinearLayout>
-
-
-
     </LinearLayout>
-
 </ScrollView>
