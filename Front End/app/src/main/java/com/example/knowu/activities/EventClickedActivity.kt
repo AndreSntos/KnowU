@@ -32,9 +32,9 @@ class EventClickedActivity : AppCompatActivity() {
         val title = intent.getStringExtra("titleEvent")
         val describe = intent.getStringExtra("describeEvent")
         val image = intent.getIntExtra("imageEvent", 0)
-        findViewById<BottomNavigationItemView>(R.id.page_2).setBackgroundColor(Color.WHITE)
-        findViewById<BottomNavigationItemView>(R.id.page_3).setBackgroundColor(Color.WHITE)
-        findViewById<BottomNavigationItemView>(R.id.page_4).setBackgroundColor(Color.WHITE)
+//        findViewById<BottomNavigationItemView>(R.id.page_2).setBackgroundColor(Color.WHITE)
+//        findViewById<BottomNavigationItemView>(R.id.page_3).setBackgroundColor(Color.WHITE)
+//        findViewById<BottomNavigationItemView>(R.id.page_4).setBackgroundColor(Color.WHITE)
 
         findViewById<TextView>(R.id.tvTitulo).text = title.toString()
         findViewById<TextView>(R.id.tvDescribe).text = describe.toString()
@@ -81,32 +81,32 @@ class EventClickedActivity : AppCompatActivity() {
 
     }
 
-     @RequiresApi(Build.VERSION_CODES.O)
-     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle item selection
-        return when (item.itemId) {
-            R.id.page_1 -> {
-                item.isChecked = true
-                startActivity(Intent(baseContext, HomeEvent::class.java))
-                true
-            }
-            R.id.page_2 -> {
-                item.isChecked = true
-                true
-            }
-            R.id.page_3 -> {
-                item.isChecked = true
-                startActivity(Intent(baseContext, EventActivity::class.java))
-                true
-            }
-            R.id.page_4 -> {
-                item.isChecked = true
-                startActivity(Intent(baseContext, ProfileActivity::class.java))
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
+//     @RequiresApi(Build.VERSION_CODES.O)
+//     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        // Handle item selection
+//        return when (item.itemId) {
+//            R.id.page_1 -> {
+//                item.isChecked = true
+//                startActivity(Intent(baseContext, HomeEvent::class.java))
+//                true
+//            }
+//            R.id.page_2 -> {
+//                item.isChecked = true
+//                true
+//            }
+//            R.id.page_3 -> {
+//                item.isChecked = true
+//                startActivity(Intent(baseContext, EventActivity::class.java))
+//                true
+//            }
+//            R.id.page_4 -> {
+//                item.isChecked = true
+//                startActivity(Intent(baseContext, ProfileActivity::class.java))
+//                true
+//            }
+//            else -> super.onOptionsItemSelected(item)
+//        }
+//    }
 
     fun voltar(view: View) {
         startActivity(Intent(baseContext, EventActivity::class.java))

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/event_background"
-    tools:context=".activities.HomeEvent">
+    tools:context=".HomeFragment">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -92,7 +92,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
                         android:background="@color/trasnpartente"
-                        android:src="@drawable/shopping"></ImageButton>
+                        android:src="@drawable/shopping"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -101,7 +101,7 @@
                         android:layout_marginTop="80dp"
                         android:background="@drawable/botao_home"
                         android:text=" Shopping "
-                        android:textColor="@color/white"></TextView>
+                        android:textColor="@color/white"/>
                 </FrameLayout>
 
                 <FrameLayout
@@ -113,7 +113,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
                         android:background="@color/trasnpartente"
-                        android:src="@drawable/parque"></ImageButton>
+                        android:src="@drawable/parque"/>
 
                     <TextView
                         android:layout_width="60dp"
@@ -122,7 +122,7 @@
                         android:layout_marginTop="80dp"
                         android:background="@drawable/botao_home"
                         android:text=" Parque "
-                        android:textColor="@color/white"></TextView>
+                        android:textColor="@color/white"/>
                 </FrameLayout>
 
                 <FrameLayout
@@ -133,7 +133,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/trasnpartente"
-                        android:src="@drawable/musica"></ImageButton>
+                        android:src="@drawable/musica"/>
 
                     <TextView
                         android:layout_width="60dp"
@@ -142,7 +142,7 @@
                         android:layout_marginTop="80dp"
                         android:background="@drawable/botao_home"
                         android:text=" Musica "
-                        android:textColor="@color/white"></TextView>
+                        android:textColor="@color/white"/>
                 </FrameLayout>
             </LinearLayout>
 
@@ -186,7 +186,7 @@
                 android:layout_marginBottom="40dp"
                 android:divider="@null"
                 android:scrollbars="none"
-                tools:listitem="@layout/list_item_posts"></ListView>
+                tools:listitem="@layout/list_item_posts"/>
         </LinearLayout>
     </ScrollView>
 

@@ -75,7 +75,6 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/bottom_navigation_menu"
         tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="675dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -79,30 +79,30 @@ class HomeEvent : AppCompatActivity() {
         startActivity(Intent(baseContext, CriarEventoActivity::class.java))
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle item selection
-        return when (item.itemId) {
-            R.id.page_1 -> {
-                item.isChecked = true
-                true
-            }
-            R.id.page_2 -> {
-                item.isChecked = true
-                true
-            }
-            R.id.page_3 -> {
-                item.isChecked = true
-                startActivity(Intent(baseContext, EventActivity::class.java))
-                true
-            }
-            R.id.page_4 -> {
-                item.isChecked = true
-                startActivity(Intent(baseContext, ProfileActivity::class.java))
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
+//    @RequiresApi(Build.VERSION_CODES.O)
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//        // Handle item selection
+//        return when (item.itemId) {
+//            R.id.page_1 -> {
+//                item.isChecked = true
+//                true
+//            }
+//            R.id.page_2 -> {
+//                item.isChecked = true
+//                true
+//            }
+//            R.id.page_3 -> {
+//                item.isChecked = true
+//                startActivity(Intent(baseContext, EventActivity::class.java))
+//                true
+//            }
+//            R.id.page_4 -> {
+//                item.isChecked = true
+//                startActivity(Intent(baseContext, ProfileActivity::class.java))
+//                true
+//            }
+//            else -> super.onOptionsItemSelected(item)
+//        }
+//    }
 
 }
