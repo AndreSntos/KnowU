@@ -11,7 +11,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
-    
+
 
     <style name="roundImageView" parent="">
         <item name="cornerFamily">rounded</item>
@@ -31,9 +31,11 @@
         <item name="android:height">100dp</item>
         <item name="cornerSize">20dp</item>
     </style>
+
     <style name="Widget.Knowu.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
         <item name="materialThemeOverlay">@style/ThemeOverlay.Knowu.Chip.Choice</item>
     </style>
+
     <style name="ThemeOverlay.Knowu.Chip.Choice" parent="">
         <item name="elevationOverlayEnabled">false</item>
     </style>
@@ -43,4 +45,13 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_gravity">center_horizontal</item>
     </style>
+
+    <style name="NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

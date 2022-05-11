@@ -16,6 +16,17 @@
         android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".PerfilContaActivity"
+            android:exported="true"
+            android:label="@string/title_activity_perfil_conta"
+            android:theme="@style/NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".activities.BottomMenuActivity"
             android:exported="true">
             <intent-filter>
@@ -66,7 +77,7 @@
         <activity
             android:name=".activities.EventActivity"
             android:exported="true"
-            android:theme="@style/Theme.Design.NoActionBar"></activity>
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".activities.SucessoActivity"
             android:exported="true" />
@@ -75,7 +86,7 @@
             android:exported="true" />
         <activity
             android:name=".activities.SplashActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".activities.SignUpTwoActivity"
             android:exported="true" />
@@ -90,7 +101,7 @@
             android:exported="true" />
         <activity
             android:name=".activities.FaqActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".activities.ChangePassword"
             android:exported="true" />
