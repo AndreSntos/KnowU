@@ -9,10 +9,12 @@ import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.knowu.HomeFragment
 import com.example.knowu.R
+import com.example.knowu.activities.HomeEvent
 import com.example.knowu.model.Postagem
 
-class ListAdapterPosts(private val context: Activity, private val postagens: ArrayList<Postagem>) :
+class ListAdapterPosts(private val context: HomeEvent, private val postagens: ArrayList<Postagem>) :
     ArrayAdapter<Postagem>(context, R.layout.list_item_posts, postagens) {
 
     @SuppressLint("ViewHolder")

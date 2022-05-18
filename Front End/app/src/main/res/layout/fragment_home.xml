@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ct_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/event_background"
-    tools:context=".HomeFragment"
-    android:id="@+id/ct_layout">
+    tools:context=".HomeFragment">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -41,14 +41,15 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="80dp">
+                    android:id="@+id/sla"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="9dp"
+                        android:layout_width="43dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginTop="5dp"
                         android:src="@drawable/event_logo" />
                 </LinearLayout>
             </LinearLayout>
@@ -74,8 +75,7 @@
                     android:text="eventos próximos"
                     android:textColor="@color/black"
                     android:textSize="25sp"
-                    android:textStyle="bold">
-                </TextView>
+                    android:textStyle="bold"/>
             </LinearLayout>
 
             <LinearLayout
@@ -93,7 +93,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
                         android:background="@color/trasnpartente"
-                        android:src="@drawable/shopping"/>
+                        android:src="@drawable/shopping" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -102,7 +102,7 @@
                         android:layout_marginTop="80dp"
                         android:background="@drawable/botao_home"
                         android:text=" Shopping "
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
                 </FrameLayout>
 
                 <FrameLayout
@@ -114,7 +114,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginRight="10dp"
                         android:background="@color/trasnpartente"
-                        android:src="@drawable/parque"/>
+                        android:src="@drawable/parque" />
 
                     <TextView
                         android:layout_width="60dp"
@@ -123,7 +123,7 @@
                         android:layout_marginTop="80dp"
                         android:background="@drawable/botao_home"
                         android:text=" Parque "
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
                 </FrameLayout>
 
                 <FrameLayout
@@ -134,7 +134,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@color/trasnpartente"
-                        android:src="@drawable/musica"/>
+                        android:src="@drawable/musica" />
 
                     <TextView
                         android:layout_width="60dp"
@@ -143,7 +143,7 @@
                         android:layout_marginTop="80dp"
                         android:background="@drawable/botao_home"
                         android:text=" Musica "
-                        android:textColor="@color/white"/>
+                        android:textColor="@color/white" />
                 </FrameLayout>
             </LinearLayout>
 
@@ -187,7 +187,7 @@
                 android:layout_marginBottom="40dp"
                 android:divider="@null"
                 android:scrollbars="none"
-                tools:listitem="@layout/list_item_posts"/>
+                tools:listitem="@layout/list_item_posts" />
         </LinearLayout>
     </ScrollView>
 
@@ -200,8 +200,11 @@
         android:backgroundTint="@color/primary_blue"
         android:onClick="goMaps"
         android:src="@drawable/location_home"
+        android:tint="#FFFFFF"
+        app:backgroundTint="@color/primary_blue"
         app:layout_constraintBottom_toTopOf="@+id/floatingActionButton3"
-        app:layout_constraintEnd_toEndOf="@+id/scrollView2" />
+        app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+        app:rippleColor="@color/white" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton3"
@@ -212,6 +215,7 @@
         android:paddingTop="30dp"
         android:paddingBottom="3dp"
         android:src="@drawable/add_home"
+        app:backgroundTint="@color/primary_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/fab"
         app:rippleColor="#673AB7" />

@@ -2,22 +2,13 @@ package com.example.knowu.activities
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.content.res.ColorStateList
-import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.widget.*
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.example.knowu.R
 import com.example.knowu.adapters.ListAdapterPosts
 import com.example.knowu.model.Postagem
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
 
 class EventClickedActivity : AppCompatActivity() {
 
@@ -39,47 +30,47 @@ class EventClickedActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tvTitulo).text = title.toString()
         findViewById<TextView>(R.id.tvDescribe).text = describe.toString()
         findViewById<ImageView>(R.id.ivImage).setImageResource(image)
-        buscarPostagens()
+//        buscarPostagens()
 
     }
 
 
-    fun buscarPostagens() {
+//    fun buscarPostagens() {
+//
+//        val ivImagemUsuario: IntArray = intArrayOf(
+//            R.drawable.event_logo, R.drawable.event_logo,
+//            R.drawable.event_logo, R.drawable.event_logo
+//        )
+//        val tvNomeUsuario: Array<String> =
+//            arrayOf("Anderson Leiva", "Patricia Silva", "Kevin Natali", "Vivian Lelis")
+//
+//        val tvUsuario: Array<String> = arrayOf(
+//            "@leivaand",
+//            "@patsilva",
+//            "@kevinnatali",
+//            "@vivilelis"
+//        )
+//
+//        val etPostagem: Array<String> = arrayOf(
+//            "Ótimo musical! Fantástico.",
+//            "Culto incrível, obrigado a todos que compareceram!",
+//            "Que jogada que eu fiz hoje! Valeu a pena voltar a ativa.",
+//            "Foi lindo rever esse museu com tanta história!"
+//        )
+//
+//        postagens = ArrayList()
+//
+//        for (i in tvNomeUsuario.indices) {
+//            val postagem =
+//                Postagem(tvNomeUsuario[i], tvUsuario[i], ivImagemUsuario[i], etPostagem[i], false)
+//            postagens.add(postagem)
+//        }
+//
+//        val lvListaPostagem: ListView = findViewById(R.id.lvListaPostagem)
+//        lvListaPostagem.layoutParams.height = 700 * tvNomeUsuario.size
+//        lvListaPostagem.adapter = ListAdapterPosts(this, postagens)
 
-        val ivImagemUsuario: IntArray = intArrayOf(
-            R.drawable.event_logo, R.drawable.event_logo,
-            R.drawable.event_logo, R.drawable.event_logo
-        )
-        val tvNomeUsuario: Array<String> =
-            arrayOf("Anderson Leiva", "Patricia Silva", "Kevin Natali", "Vivian Lelis")
-
-        val tvUsuario: Array<String> = arrayOf(
-            "@leivaand",
-            "@patsilva",
-            "@kevinnatali",
-            "@vivilelis"
-        )
-
-        val etPostagem: Array<String> = arrayOf(
-            "Ótimo musical! Fantástico.",
-            "Culto incrível, obrigado a todos que compareceram!",
-            "Que jogada que eu fiz hoje! Valeu a pena voltar a ativa.",
-            "Foi lindo rever esse museu com tanta história!"
-        )
-
-        postagens = ArrayList()
-
-        for (i in tvNomeUsuario.indices) {
-            val postagem =
-                Postagem(tvNomeUsuario[i], tvUsuario[i], ivImagemUsuario[i], etPostagem[i], false)
-            postagens.add(postagem)
-        }
-
-        val lvListaPostagem: ListView = findViewById(R.id.lvListaPostagem)
-        lvListaPostagem.layoutParams.height = 700 * tvNomeUsuario.size
-        lvListaPostagem.adapter = ListAdapterPosts(this, postagens)
-
-    }
+//    }
 
 //     @RequiresApi(Build.VERSION_CODES.O)
 //     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -108,8 +99,8 @@ class EventClickedActivity : AppCompatActivity() {
 //        }
 //    }
 
-    fun voltar(view: View) {
-        startActivity(Intent(baseContext, EventActivity::class.java))
-    }
+//    fun voltar(view: View) {
+//        startActivity(Intent(baseContext, EventActivity::class.java))
+//    }
 }
 
