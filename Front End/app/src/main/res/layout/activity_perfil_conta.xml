@@ -4,7 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PerfilContaActivity">
+    tools:context=".PerfilContaActivity"
+    android:background="@drawable/ic_background_tela_email"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/container_perfil_conta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/user_profile"/>
+
+    </LinearLayout>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
@@ -13,10 +29,13 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="1dp"
+        android:backgroundTint="@color/trasnpartente"
+        app:tabTextColor="@color/primary_blue"
+        app:tabIndicatorColor="@color/primary_blue"
         app:layout_constraintBottom_toTopOf="@+id/viewPager2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_perfil_conta"
         tools:ignore="MissingConstraints" />
 
     <androidx.viewpager2.widget.ViewPager2
