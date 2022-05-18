@@ -30,7 +30,7 @@ Portanto, com essa aplicação o processo de interação social torna-se mais si
 
 ## Tecnologias
 
-Este website apresenta todas as ferramentas e práticas mais recentes em desenvolvimento web!
+Este app apresenta todas as ferramentas e práticas mais recentes em desenvolvimento mobile!
 
 - 💹 **Kotlin**
 - 💹 **Android**
