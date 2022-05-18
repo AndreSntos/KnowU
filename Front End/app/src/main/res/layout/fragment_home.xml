@@ -197,7 +197,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_margin="16dp"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/primary_blue"
         android:onClick="goMaps"
         android:src="@drawable/location_home"
         app:layout_constraintBottom_toTopOf="@+id/floatingActionButton3"
@@ -207,13 +207,13 @@
         android:id="@+id/floatingActionButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/primary_blue"
         android:onClick="abrirCriacaoEvento"
         android:paddingTop="30dp"
         android:paddingBottom="3dp"
         android:src="@drawable/add_home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/fab"
-        tools:ignore="UnknownIdInLayout" />
+        app:rippleColor="#673AB7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
