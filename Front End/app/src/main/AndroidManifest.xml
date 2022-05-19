@@ -31,11 +31,13 @@
             android:exported="true" />
         <activity
             android:name=".activities.ProfileActivity"
-            android:exported="true" />
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".activities.EventClickedActivity"
             android:exported="true"
-            android:theme="@style/Theme.Design.NoActionBar"></activity>
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".OnboardActivity"
             android:exported="true" />
@@ -48,17 +50,17 @@
         <activity
             android:name=".activities.HomeEvent"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activities.EventActivity"
             android:exported="true"
             android:theme="@style/Theme.Design.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".activities.SucessoActivity"
@@ -68,38 +70,34 @@
             android:exported="true" />
         <activity
             android:name=".activities.SplashActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".activities.SignUpTwoActivity"
             android:exported="true" />
         <activity
             android:name=".activities.SignInActivity"
-            android:exported="true" />
-        <activity
-            android:name=".activities.SignUpActivity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".activities.ForgotPasswordActivity"
-            android:exported="true" />
-
-        <activity
-            android:name=".activities.FaqActivity"
             android:exported="true">
 
         </activity>
-
+        <activity
+            android:name=".activities.SignUpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.ForgotPasswordActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.FaqActivity"
+            android:exported="true" />
         <activity
             android:name=".activities.ChangePassword"
             android:exported="true" />
         <activity
             android:name=".activities.InicioAppActivity"
             android:exported="true"
-            android:label="Inicio"></activity>
+            android:label="Inicio" />
         <activity
             android:name=".activities.EmailActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".activities.ToastActivity"
             android:exported="true" />

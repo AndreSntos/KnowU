@@ -27,8 +27,8 @@ class ListAdapterPosts(private val context: Activity, private val postagens: Arr
         val ivImagemUsuario: ImageView = view.findViewById(R.id.ivImagemUsuario)
         val ivPostagemCurtida: ImageView = view.findViewById(R.id.ivPostagemCurtida)
 
-        tvNomeUsuario.setText(postagens[position].nome)
-        tvUsuario.setText(postagens[position].usuario)
+        tvNomeUsuario.setText(postagens[position].usuario.nome)
+        tvUsuario.setText(postagens[position].usuario.usuario)
         etPostagem.setText(postagens[position].postagem)
         ivImagemUsuario.setImageResource(postagens[position].imagem)
         if (postagens[position].curtida) {

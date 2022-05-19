@@ -1,4 +1,5 @@
 package com.example.knowu.activities
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -59,8 +60,13 @@ class SignInActivity : AppCompatActivity() {
             usuarioRequest.login(UsuarioLoginRequest(loginUser.text.toString(), passwordUser.text.toString())).enqueue(object : Callback<Int> {
                 override fun onResponse(call: Call<Int>, response: Response<Int>) {
 
-                    println("respoe" + response.code())
                     if (response.code() == 200) {
+                        val editor = getSharedPreferences(
+                            "USER",
+                            Context.MODE_PRIVATE
+                        ).edit()
+                        editor.putInt("id", response.body()!!)
+                        editor.apply()
                         startActivity(Intent(baseContext, HomeEvent::class.java))
                     }
 

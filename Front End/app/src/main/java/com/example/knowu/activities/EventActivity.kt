@@ -44,9 +44,9 @@ class EventActivity: AppCompatActivity() {
         val lvListaEvento: ListView = findViewById(R.id.lvListaEvento)
         lvListaEvento.adapter = ListAdapterEvents(this, eventos)
 
+        // Esse não
         lvListaEvento.setOnItemClickListener { parent, _, position, _ ->
             val evento: Evento = parent.getItemAtPosition(position) as Evento
-            println("Id Evento Coletado ${evento.id}")
 
             val intent = Intent(this, EventClickedActivity::class.java)
             intent.putExtra("idEvento", evento.id)

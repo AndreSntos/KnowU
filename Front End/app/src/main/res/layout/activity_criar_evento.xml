@@ -36,7 +36,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ti_nome_evento"
+                android:id="@+id/tvNome_evento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -55,7 +55,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ti_descricao"
+                android:id="@+id/tvDescricao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -179,7 +179,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="30dp">
+                android:layout_marginBottom="10dp">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="100dp"
@@ -212,6 +212,73 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
+                    <com.vicmikhailau.maskededittext.MaskedEditText
+                        android:id="@+id/tvDataEvento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:backgroundTint="@color/black"
+                        android:hint="Data do Evento"
+                        app:mask="##/##/####"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/primary_blue"
+                        android:inputType="date"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp">
+
+                    <com.vicmikhailau.maskededittext.MaskedEditText
+                        android:id="@+id/tvHoraInicioEvento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:backgroundTint="@color/black"
+                        android:hint="Hora de Inicio"
+                        app:mask="##:##"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/primary_blue"
+                        android:inputType="time"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp">
+
+                    <com.vicmikhailau.maskededittext.MaskedEditText
+                        android:id="@+id/tvHoraFimEvento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:backgroundTint="@color/black"
+                        android:hint="Hora de Término"
+                        app:mask="##:##"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/primary_blue"
+                        android:inputType="time"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
 
         </LinearLayout>
         <Button

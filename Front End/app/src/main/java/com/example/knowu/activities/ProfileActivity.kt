@@ -3,7 +3,6 @@ package com.example.knowu.activities
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.ListView
@@ -51,11 +50,11 @@ class ProfileActivity : AppCompatActivity() {
 
         postagens = ArrayList()
 
-        for (i in tvNomeUsuario.indices) {
-            val postagem =
-                Postagem(tvNomeUsuario[i], tvUsuario[i], ivImagemUsuario[i], etPostagem[i], false)
-            postagens.add(postagem)
-        }
+        // for (i in tvNomeUsuario.indices) {
+        // val postagem =
+        //   Postagem(tvNomeUsuario[i], tvUsuario[i], ivImagemUsuario[i], etPostagem[i], false)
+        // postagens.add(postagem)
+        // }
 
         val lvListaPostagem: ListView = findViewById(R.id.lvListaPostagem)
         lvListaPostagem.layoutParams.height = 700 * tvNomeUsuario.size
