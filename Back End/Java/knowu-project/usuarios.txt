@@ -1,0 +1,9 @@
+US00USUARIO25-11-2021 18:29:50v01
+US01   1Renato Paulino                                    RenOP     1199999-9999  renato.paulino@sptech.com.br            410.427.638-3611/05/1992Masculino      
+US02: 1 dados registrados
+US00USUARIO01-12-2021 19:16:01v01
+US01   6Teste Santos                                      santos    null          guilherme_nsantos@hotmail.com           49488852828   31/05/2002Masculino      
+US02: 1 dados registrados
+US00USUARIO28-12-2021 14:35:29v01
+US01   7Pedro Nascimento Silva                            pedrinho  null          pedro_nsantos@hotmail.com               49488852828   31/05/2002Masculino      
+US02: 1 dados registrados
