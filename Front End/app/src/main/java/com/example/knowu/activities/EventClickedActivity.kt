@@ -44,6 +44,16 @@ class EventClickedActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tvDescribe).text = describe.toString()
         findViewById<ImageView>(R.id.ivImage).setImageResource(image)
         buscarPostagens()
+        verificaSeUsuarioEstaNoEvento()
+
+    }
+
+    fun verificaSeUsuarioEstaNoEvento() {
+        val user = getSharedPreferences(
+            "USER",
+            Context.MODE_PRIVATE
+        )
+        val idUsuario = user.getInt("id", 0)
 
     }
 
@@ -69,7 +79,7 @@ class EventClickedActivity : AppCompatActivity() {
             ) {
                 if (response.code() == 200) {
 
-                    println(response.body())
+
                     val postagensEncontradas: List<Postagem>? = response.body()
                     val ivImagemUsuario: IntArray = intArrayOf(
                         R.drawable.event_logo, R.drawable.event_logo,

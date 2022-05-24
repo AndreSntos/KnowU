@@ -37,9 +37,9 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:onClick="voltar"
                         android:paddingTop="25dp"
-                        android:src="@drawable/arrow_events"
-                        android:onClick="voltar"/>
+                        android:src="@drawable/arrow_events" />
 
                 </LinearLayout>
 
@@ -184,6 +184,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="34dp"
                     android:src="@drawable/participants_event_clicked" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/botao_home"
+                    android:text="Participar do Evento"
+                    android:id="@+id/btnParticipeEventOrCreatePost"/>
 
                 <TextView
                     android:layout_width="match_parent"

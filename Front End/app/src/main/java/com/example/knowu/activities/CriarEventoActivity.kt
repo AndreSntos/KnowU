@@ -7,7 +7,6 @@ import android.provider.CalendarContract
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.knowu.R
@@ -60,8 +59,10 @@ class CriarEventoActivity : AppCompatActivity() {
                     call: Call<Root>,
                     resp: Response<Root>
                 ) {
-                    val lat: Double? = resp.body()?.results?.get(0)?.geometry?.bounds?.northeast?.lat
-                    val lng: Double? = resp.body()?.results?.get(0)?.geometry?.bounds?.northeast?.lng
+                    val lat: Double? =
+                        resp.body()?.results?.get(0)?.geometry?.bounds?.northeast?.lat
+                    val lng: Double? =
+                        resp.body()?.results?.get(0)?.geometry?.bounds?.northeast?.lng
                     baseUrl = "http://34.228.172.224:8080/evento/"
                     val retrofit = Rest.getInstance(baseUrl)
                     val user = getSharedPreferences(
@@ -92,28 +93,49 @@ class CriarEventoActivity : AppCompatActivity() {
                             ) {
                                 if (response.code() == 201) {
                                     val dataEvento: EditText = findViewById(R.id.tvDataEvento)
-                                    println(findViewById<EditText>(R.id.tvHoraInicioEvento).text.toString())
-                                    println(findViewById<EditText>(R.id.tvHoraFimEvento).text.toString())
+
                                     val intent = Intent(Intent.ACTION_INSERT)
                                     intent.type = "vnd.android.cursor.item/event"
-                                    intent.putExtra(CalendarContract.Events.TITLE, findViewById<EditText>(R.id.tvNome_evento).text.toString());
-                                    intent.putExtra(CalendarContract.Events.EVENT_LOCATION, localidade.endereco);
-                                    intent.putExtra(CalendarContract.Events.DESCRIPTION, findViewById<EditText>(R.id.tvDescricao).text.toString());
+                                    intent.putExtra(
+                                        CalendarContract.Events.TITLE,
+                                        findViewById<EditText>(R.id.tvNome_evento).text.toString()
+                                    );
+                                    intent.putExtra(
+                                        CalendarContract.Events.EVENT_LOCATION,
+                                        localidade.endereco
+                                    );
+                                    intent.putExtra(
+                                        CalendarContract.Events.DESCRIPTION,
+                                        findViewById<EditText>(R.id.tvDescricao).text.toString()
+                                    );
+
+                                    var mesEventoAjustado: Int =
+                                        if (dataEvento.text.toString().substring(3, 5)
+                                                .startsWith("0")
+                                        ) {
+                                            dataEvento.text.toString().substring(4, 5).toInt()
+                                        } else {
+                                            dataEvento.text.toString().substring(3, 5).toInt()
+                                        }
 
                                     val calDate = GregorianCalendar(
-                                        2022,
-                                        4,
-                                        12
+                                        dataEvento.text.toString().substring(6, 10).toInt(),
+                                        mesEventoAjustado - 1,
+                                        dataEvento.text.toString().substring(0, 2).toInt()
                                     )
-                                    intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME,
-                                        23.00
+                                    intent.putExtra(
+                                        CalendarContract.EXTRA_EVENT_BEGIN_TIME,
+                                        findViewById<EditText>(R.id.tvHoraInicioEvento).text.toString()
+                                            .replace(":", ".")
                                     );
-                                    intent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME,
-                                        calDate.timeInMillis);
+                                    intent.putExtra(
+                                        CalendarContract.EXTRA_EVENT_END_TIME,
+                                        findViewById<EditText>(R.id.tvHoraFimEvento).text.toString()
+                                            .replace(":", ".")
+                                    );
 
                                     intent.data = CalendarContract.Events.CONTENT_URI
                                     startActivity(intent)
-
                                 }
 
 
