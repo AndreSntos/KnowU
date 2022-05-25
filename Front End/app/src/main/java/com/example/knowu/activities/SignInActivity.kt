@@ -1,10 +1,12 @@
 package com.example.knowu.activities
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
+import com.example.knowu.HomeFragment
 import com.example.knowu.R
 import com.example.knowu.request.UsuarioLoginRequest
 import com.example.knowu.rest.Rest
@@ -15,7 +17,7 @@ import retrofit2.Response
 
 class SignInActivity : AppCompatActivity() {
 
-    val baseUrl = "http://34.228.172.224:8080/"
+    val baseUrl = "http://10.18.35.141:8080/"
     private val retrofit = Rest.getInstance(baseUrl)
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,9 +61,14 @@ class SignInActivity : AppCompatActivity() {
             usuarioRequest.login(UsuarioLoginRequest(loginUser.text.toString(), passwordUser.text.toString())).enqueue(object : Callback<Int> {
                 override fun onResponse(call: Call<Int>, response: Response<Int>) {
 
-                    println("respoe" + response.code())
                     if (response.code() == 200) {
-                        startActivity(Intent(baseContext, HomeEvent::class.java))
+                        val editor = getSharedPreferences(
+                            "USER",
+                            Context.MODE_PRIVATE
+                        ).edit()
+                        editor.putInt("id", response.body()!!)
+                        editor.apply()
+                        startActivity(Intent(baseContext, BottomMenuActivity::class.java))
                     }
 
                 }

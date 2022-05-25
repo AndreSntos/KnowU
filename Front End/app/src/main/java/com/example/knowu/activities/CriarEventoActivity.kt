@@ -1,7 +1,9 @@
 package com.example.knowu.activities
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.provider.CalendarContract
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
@@ -10,12 +12,16 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.knowu.R
 import com.example.knowu.model.LocalizacaoEvento
 import com.example.knowu.model.googleapi.Root
+import com.example.knowu.request.EventoAdicionarRequest
+import com.example.knowu.request.Localidade
 import com.example.knowu.rest.Rest
 import com.example.knowu.services.CEPService
+import com.example.knowu.services.EventoService
 import com.example.knowu.services.MetricasService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class CriarEventoActivity : AppCompatActivity() {
 
@@ -30,7 +36,7 @@ class CriarEventoActivity : AppCompatActivity() {
     }
 
     fun criarEvento(view: View) {
-        val baseUrl = "https://maps.google.com/maps/api/geocode/"
+        var baseUrl = "https://maps.google.com/maps/api/geocode/"
         val retrofit = Rest.getInstance(baseUrl)
         val metricasRequest = retrofit.create(MetricasService::class.java)
 
@@ -42,26 +48,112 @@ class CriarEventoActivity : AppCompatActivity() {
         var bairroAjustado: String = bairro.text.toString()
         bairroAjustado = bairroAjustado.replace(" ", "+")
         enderecoAjustado += "+" + findViewById<EditText>(R.id.tvNumero).text.toString()
-        enderecoAjustado += "," +  "+" + bairroAjustado + "," + localizacaoEvento.state
+        enderecoAjustado += "," + "+" + bairroAjustado + "," + localizacaoEvento.state
 
         println(enderecoAjustado)
 
-        metricasRequest.list(enderecoAjustado, "BR", "AIzaSyCZsNXNO7Y36v1Nw8AmM8-LacW75MhISC8").enqueue(object :
-            Callback<Root> {
-            override fun onResponse(
-                call: Call<Root>,
-                response: Response<Root>
-            ) {
+        metricasRequest.list(enderecoAjustado, "BR", "AIzaSyCZsNXNO7Y36v1Nw8AmM8-LacW75MhISC8")
+            .enqueue(object :
+                Callback<Root> {
+                override fun onResponse(
+                    call: Call<Root>,
+                    resp: Response<Root>
+                ) {
+                    val lat: Double? =
+                        resp.body()?.results?.get(0)?.geometry?.bounds?.northeast?.lat
+                    val lng: Double? =
+                        resp.body()?.results?.get(0)?.geometry?.bounds?.northeast?.lng
+                    baseUrl = "http://10.18.35.141:8080/evento/"
+                    val retrofit = Rest.getInstance(baseUrl)
+                    val user = getSharedPreferences(
+                        "USER",
+                        Context.MODE_PRIVATE
+                    )
+                    val eventoRequest = retrofit.create(EventoService::class.java)
+                    val id = user.getInt("id", 1)
+                    if (resp.body()?.status.equals("OK")) {
+                        val localidade = Localidade(
+                            enderecoAjustado.replace("+", " "),
+                            lat!!,
+                            lng!!
+                        )
+                        println(localidade.endereco + localidade.latitute + localidade.longitute)
+                        eventoRequest.add(
+                            id,
+                            EventoAdicionarRequest(
+                                findViewById<EditText>(R.id.tvNome_evento).text.toString(),
+                                findViewById<EditText>(R.id.tvDescricao).text.toString(),
+                                localidade
+                            )
+                        ).enqueue(object :
+                            Callback<Void> {
+                            override fun onResponse(
+                                call: Call<Void>,
+                                response: Response<Void>
+                            ) {
+                                if (response.code() == 201) {
+                                    val dataEvento: EditText = findViewById(R.id.tvDataEvento)
 
-                println("AAAAAA" + response.body()?.results?.get(0)?.geometry?.bounds?.northeast?.lat + " " + response.body()?.results?.get(0)?.geometry?.bounds?.northeast )
+                                    val intent = Intent(Intent.ACTION_INSERT)
+                                    intent.type = "vnd.android.cursor.item/event"
+                                    intent.putExtra(
+                                        CalendarContract.Events.TITLE,
+                                        findViewById<EditText>(R.id.tvNome_evento).text.toString()
+                                    );
+                                    intent.putExtra(
+                                        CalendarContract.Events.EVENT_LOCATION,
+                                        localidade.endereco
+                                    );
+                                    intent.putExtra(
+                                        CalendarContract.Events.DESCRIPTION,
+                                        findViewById<EditText>(R.id.tvDescricao).text.toString()
+                                    );
+
+                                    var mesEventoAjustado: Int =
+                                        if (dataEvento.text.toString().substring(3, 5)
+                                                .startsWith("0")
+                                        ) {
+                                            dataEvento.text.toString().substring(4, 5).toInt()
+                                        } else {
+                                            dataEvento.text.toString().substring(3, 5).toInt()
+                                        }
+
+                                    val calDate = GregorianCalendar(
+                                        dataEvento.text.toString().substring(6, 10).toInt(),
+                                        mesEventoAjustado - 1,
+                                        dataEvento.text.toString().substring(0, 2).toInt()
+                                    )
+                                    intent.putExtra(
+                                        CalendarContract.EXTRA_EVENT_BEGIN_TIME,
+                                        findViewById<EditText>(R.id.tvHoraInicioEvento).text.toString()
+                                            .replace(":", ".")
+                                    );
+                                    intent.putExtra(
+                                        CalendarContract.EXTRA_EVENT_END_TIME,
+                                        findViewById<EditText>(R.id.tvHoraFimEvento).text.toString()
+                                            .replace(":", ".")
+                                    );
+
+                                    intent.data = CalendarContract.Events.CONTENT_URI
+                                    startActivity(intent)
+                                }
 
 
-            }
+                            }
 
-            override fun onFailure(call: Call<Root>, t: Throwable) {
-                println("ERROR" + t.message)
-            }
-        })
+                            override fun onFailure(call: Call<Void>, t: Throwable) {
+                                println("ERROR" + t.message)
+                            }
+                        })
+                    }
+
+
+                }
+
+                override fun onFailure(call: Call<Root>, t: Throwable) {
+                    println("ERROR" + t.message)
+                }
+            })
     }
 
 
@@ -90,8 +182,8 @@ class CriarEventoActivity : AppCompatActivity() {
     }
 
     fun validarCampos(): Boolean {
-        var nome_evento = findViewById<EditText>(R.id.ti_nome_evento);
-        var descricao = findViewById<EditText>(R.id.ti_descricao);
+        var nome_evento = findViewById<EditText>(R.id.tvNome_evento);
+        var descricao = findViewById<EditText>(R.id.tvDescricao);
         var dialog = AlertDialog.Builder(this);
         dialog.setTitle("Atenção").setIcon(R.drawable.error)
             .setPositiveButton("Ok", null)

@@ -9,12 +9,14 @@ import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import com.example.knowu.HomeFragment
 import com.example.knowu.R
 import com.example.knowu.activities.HomeEvent
 import com.example.knowu.model.Postagem
 
-class ListAdapterPosts(private val context: HomeEvent, private val postagens: ArrayList<Postagem>) :
+class ListAdapterPosts(private val context: FragmentActivity, private val postagens: ArrayList<Postagem>) :
     ArrayAdapter<Postagem>(context, R.layout.list_item_posts, postagens) {
 
     @SuppressLint("ViewHolder")
@@ -29,8 +31,8 @@ class ListAdapterPosts(private val context: HomeEvent, private val postagens: Ar
         val ivImagemUsuario: ImageView = view.findViewById(R.id.ivImagemUsuario)
         val ivPostagemCurtida: ImageView = view.findViewById(R.id.ivPostagemCurtida)
 
-        tvNomeUsuario.setText(postagens[position].nome)
-        tvUsuario.setText(postagens[position].usuario)
+        tvNomeUsuario.setText(postagens[position].usuario.nome)
+        tvUsuario.setText(postagens[position].usuario.usuario)
         etPostagem.setText(postagens[position].postagem)
         ivImagemUsuario.setImageResource(postagens[position].imagem)
         if (postagens[position].curtida) {

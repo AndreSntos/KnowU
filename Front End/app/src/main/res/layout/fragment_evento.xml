@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/event_background"
-    tools:context=".activities.EventActivity">
+    tools:context="EventoFragment">
 
     <LinearLayout
         android:layout_width="320dp"

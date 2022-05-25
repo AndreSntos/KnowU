@@ -23,11 +23,6 @@
         <activity
             android:name=".activities.BottomMenuActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".activities.MenuActivity"
@@ -83,7 +78,13 @@
             android:exported="true" />
         <activity
             android:name=".activities.SignInActivity"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activities.SignUpActivity"
             android:exported="true" />

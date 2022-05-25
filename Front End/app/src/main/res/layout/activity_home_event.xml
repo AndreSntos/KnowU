@@ -199,8 +199,7 @@
         app:layout_constraintBottom_toTopOf="@+id/floatingActionButton3"
         app:layout_constraintEnd_toEndOf="@+id/scrollView2"
         android:backgroundTint="@color/purple_500"
-        android:src="@drawable/location_home"
-        android:onClick="goMaps"/>
+        android:src="@drawable/location_home" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton3"
@@ -213,8 +212,7 @@
         tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="675dp"
         android:backgroundTint="@color/purple_500"
-        android:src="@drawable/add_home"
-        android:onClick="abrirCriacaoEvento"/>
+        android:src="@drawable/add_home" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

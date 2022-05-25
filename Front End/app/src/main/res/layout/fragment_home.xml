@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/event_background"
-    tools:context=".HomeFragment">
+    tools:context="HomeFragment">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -192,13 +192,12 @@
     </ScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fabMaps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_margin="16dp"
         android:backgroundTint="@color/primary_blue"
-        android:onClick="goMaps"
         android:src="@drawable/location_home"
         android:tint="#FFFFFF"
         app:backgroundTint="@color/primary_blue"
@@ -211,13 +210,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/primary_blue"
-        android:onClick="abrirCriacaoEvento"
         android:paddingTop="30dp"
         android:paddingBottom="3dp"
         android:src="@drawable/add_home"
         app:backgroundTint="@color/primary_blue"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/fab"
+        app:layout_constraintEnd_toEndOf="@+id/fabMaps"
         app:rippleColor="#673AB7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

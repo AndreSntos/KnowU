@@ -1,14 +1,23 @@
 package com.example.knowu.activities
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.*
+import android.widget.ImageView
+import android.widget.ListView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.knowu.R
 import com.example.knowu.adapters.ListAdapterPosts
+import com.example.knowu.model.EventoFragment
 import com.example.knowu.model.Postagem
+import com.example.knowu.rest.Rest
+import com.example.knowu.services.PostagemService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class EventClickedActivity : AppCompatActivity() {
 
@@ -18,7 +27,7 @@ class EventClickedActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event_clicked)
-
+        postagens = ArrayList()
         val id = intent.getIntExtra("idEvento", 0)
         val title = intent.getStringExtra("titleEvent")
         val describe = intent.getStringExtra("describeEvent")
@@ -31,76 +40,89 @@ class EventClickedActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.tvDescribe).text = describe.toString()
         findViewById<ImageView>(R.id.ivImage).setImageResource(image)
 //        buscarPostagens()
+        buscarPostagens()
+        verificaSeUsuarioEstaNoEvento()
+
+    }
+
+    fun verificaSeUsuarioEstaNoEvento() {
+        val user = getSharedPreferences(
+            "USER",
+            Context.MODE_PRIVATE
+        )
+        val idUsuario = user.getInt("id", 0)
 
     }
 
 
-//    fun buscarPostagens() {
-//
-//        val ivImagemUsuario: IntArray = intArrayOf(
-//            R.drawable.event_logo, R.drawable.event_logo,
-//            R.drawable.event_logo, R.drawable.event_logo
-//        )
-//        val tvNomeUsuario: Array<String> =
-//            arrayOf("Anderson Leiva", "Patricia Silva", "Kevin Natali", "Vivian Lelis")
-//
-//        val tvUsuario: Array<String> = arrayOf(
-//            "@leivaand",
-//            "@patsilva",
-//            "@kevinnatali",
-//            "@vivilelis"
-//        )
-//
-//        val etPostagem: Array<String> = arrayOf(
-//            "Ótimo musical! Fantástico.",
-//            "Culto incrível, obrigado a todos que compareceram!",
-//            "Que jogada que eu fiz hoje! Valeu a pena voltar a ativa.",
-//            "Foi lindo rever esse museu com tanta história!"
-//        )
-//
-//        postagens = ArrayList()
-//
-//        for (i in tvNomeUsuario.indices) {
-//            val postagem =
-//                Postagem(tvNomeUsuario[i], tvUsuario[i], ivImagemUsuario[i], etPostagem[i], false)
-//            postagens.add(postagem)
-//        }
-//
-//        val lvListaPostagem: ListView = findViewById(R.id.lvListaPostagem)
-//        lvListaPostagem.layoutParams.height = 700 * tvNomeUsuario.size
-//        lvListaPostagem.adapter = ListAdapterPosts(this, postagens)
+    fun buscarPostagens() {
 
-//    }
+        val ivImagemUsuario: IntArray = intArrayOf(
+            R.drawable.event_logo, R.drawable.event_logo,
+            R.drawable.event_logo, R.drawable.event_logo
+        )
+        postagens = ArrayList()
 
-//     @RequiresApi(Build.VERSION_CODES.O)
-//     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        // Handle item selection
-//        return when (item.itemId) {
-//            R.id.page_1 -> {
-//                item.isChecked = true
-//                startActivity(Intent(baseContext, HomeEvent::class.java))
-//                true
-//            }
-//            R.id.page_2 -> {
-//                item.isChecked = true
-//                true
-//            }
-//            R.id.page_3 -> {
-//                item.isChecked = true
-//                startActivity(Intent(baseContext, EventActivity::class.java))
-//                true
-//            }
-//            R.id.page_4 -> {
-//                item.isChecked = true
-//                startActivity(Intent(baseContext, ProfileActivity::class.java))
-//                true
-//            }
-//            else -> super.onOptionsItemSelected(item)
-//        }
-//    }
+        val user = getSharedPreferences(
+            "USER",
+            Context.MODE_PRIVATE
+        )
+        val idUsuario = user.getInt("id", 0)
+        val idEvento = intent.getIntExtra("idEvento", 6)
 
-//    fun voltar(view: View) {
-//        startActivity(Intent(baseContext, EventActivity::class.java))
-//    }
+        var baseUrl= "http://192.168.0.188:8080/postagens/"
+        val retrofit = Rest.getInstance(baseUrl)
+        val postagemRequest = retrofit.create(PostagemService::class.java)
+
+        postagemRequest.list(idEvento).enqueue(object :
+            Callback<List<Postagem>> {
+            override fun onResponse(
+                call: Call<List<Postagem>>,
+                response: Response<List<Postagem>>
+            ) {
+                if (response.code() == 200) {
+
+
+                    val postagensEncontradas: List<Postagem>? = response.body()
+                    val ivImagemUsuario: IntArray = intArrayOf(
+                        R.drawable.event_logo, R.drawable.event_logo,
+                        R.drawable.event_logo, R.drawable.event_logo
+                    )
+                    if (postagensEncontradas?.size!! > 0) {
+
+                        for (i in postagensEncontradas.indices) {
+
+                            postagens.add(Postagem(
+                                    postagensEncontradas[i].postagem,
+                                    postagensEncontradas[i].usuario,
+                                    postagensEncontradas[i].evento,
+                                    postagensEncontradas[i].dataPostagem,
+                                    ivImagemUsuario[0],
+                                    false
+                                ))
+
+                        }
+                        inserirPostagensNoAdapter()
+
+                    }
+                }
+
+            }
+            override fun onFailure(call: Call<List<Postagem>>, t: Throwable) {
+                println("ERROR" + t.message)
+            }
+        })
+    }
+
+    fun inserirPostagensNoAdapter() {
+        val lvListaPostagem: ListView = findViewById(R.id.lvListaPostagem)
+        lvListaPostagem.layoutParams.height = 800 * postagens.size
+        lvListaPostagem.adapter = ListAdapterPosts(this, postagens)
+    }
+
+
+    fun voltar(view: View) {
+        finish()
+    }
 }
 

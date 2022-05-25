@@ -44,9 +44,9 @@ class EventActivity: AppCompatActivity() {
         val lvListaEvento: ListView = findViewById(R.id.lvListaEvento)
         lvListaEvento.adapter = ListAdapterEvents(this, eventos)
 
+        // Esse não
         lvListaEvento.setOnItemClickListener { parent, _, position, _ ->
             val evento: Evento = parent.getItemAtPosition(position) as Evento
-            println("Id Evento Coletado ${evento.id}")
 
             val intent = Intent(this, EventClickedActivity::class.java)
             intent.putExtra("idEvento", evento.id)
@@ -59,31 +59,5 @@ class EventActivity: AppCompatActivity() {
 
     }
 
-//    @RequiresApi(Build.VERSION_CODES.O)
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        // Handle item selection
-////        return when (item.itemId) {
-////            R.id.page_1 -> {
-////                item.isChecked = true
-////                startActivity(Intent(baseContext, HomeEvent::class.java))
-////                true
-////            }
-////            R.id.page_2 -> {
-////                item.isChecked = true
-////                true
-////            }
-////            R.id.page_3 -> {
-////                item.isChecked = true
-////                startActivity(Intent(baseContext, EventActivity::class.java))
-////                true
-////            }
-////            R.id.page_4 -> {
-////                item.isChecked = true
-////                startActivity(Intent(baseContext, ProfileActivity::class.java))
-////                true
-////            }
-////            else -> super.onOptionsItemSelected(item)
-////        }
-//    }
 }
 

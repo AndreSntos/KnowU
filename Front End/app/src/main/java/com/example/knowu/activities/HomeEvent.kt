@@ -2,6 +2,7 @@ package com.example.knowu.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
@@ -48,11 +49,11 @@ class HomeEvent : AppCompatActivity() {
 
         postagens = ArrayList()
 
-        for (i in tvNomeUsuario.indices) {
-            val postagem =
-                Postagem(tvNomeUsuario[i], tvUsuario[i], ivImagemUsuario[i], etPostagem[i], false)
-            postagens.add(postagem)
-        }
+        // for (i in tvNomeUsuario.indices) {
+           // val postagem =
+             //   Postagem(tvNomeUsuario[i], tvUsuario[i], ivImagemUsuario[i], etPostagem[i], false)
+            // postagens.add(postagem)
+       // }
 
         val lvListaPostagem: ListView = findViewById(R.id.lvListaPostagem)
         lvListaPostagem.layoutParams.height = 700 * tvNomeUsuario.size
@@ -64,9 +65,9 @@ class HomeEvent : AppCompatActivity() {
         startActivity(Intent(baseContext, MapsActivity::class.java))
     }
 
-    fun abrirCriacaoEvento(view: View) {
-        startActivity(Intent(baseContext, CriarEventoActivity::class.java))
-    }
+//    fun abrirCriacaoEvento(view: View) {
+//        startActivity(Intent(baseContext, CriarEventoActivity::class.java))
+//    }
 
 //    @RequiresApi(Build.VERSION_CODES.O)
 //    override fun onOptionsItemSelected(item: MenuItem): Boolean {
